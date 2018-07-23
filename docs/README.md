@@ -4,7 +4,10 @@
 
 ## README
 
-课程地址：[Coursera | 机器学习](https://www.coursera.org/learn/machine-learning/home/welcome)
+课程地址：
+
+* [Coursera | 机器学习](https://www.coursera.org/learn/machine-learning/home/welcome)
+* 或者 B 站视频：[机器学习（Machine Learning）- 吴恩达（Andrew Ng）](https://www.bilibili.com/video/av9912938/?p=20)
 
 深感之前对 ML 的学习较为碎片化，决定在啃 CS224n 前对最经典的吴恩达《机器学习》课程快速地学习一遍，并对有价值的部分进行笔记。不会像[《深度学习》系列课程笔记](http://kyonhuang.top/Andrew-Ng-Deep-Learning-notes/)一样事无巨细地记录，另外可能也不会涉及编程作业。
 
