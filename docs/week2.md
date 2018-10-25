@@ -69,11 +69,50 @@ $$\theta = (X^TX)^{-1}X^Ty$$
 不过正规方程方法要求 $X^TX$ 可逆。$X^TX$ 不可逆的原因有两种可能：
 
 1. 列向量线性相关：即训练集中存在冗余特征（特征线性依赖），此时应该剔除掉多余特征；
-2. 特征过多：此时应该去掉影响较小的特征，或使用“正则化”。
+2. 特征过多（多于样本数量）：此时应该去掉影响较小的特征，或引入正则化（regularization）项。
 
 ### 正规方程的推导过程
 
-[有一步我还没推清楚](https://zhuanlan.zhihu.com/p/32300413)
+把数据集表示为矩阵
+
+$$X = \left( \begin{matrix} x\_{11} & x\_{12} & \cdots & x\_{1d} & 1 \\\ x\_{21} & x\_{22} & \cdots & x\_{2d} & 1 \\\ \vdots & \vdots & \ddots & \vdots & \vdots \\\ x\_{m1} & x\_{m2} & \cdots & x\_{md} & 1 \\\ \end{matrix} \right) = \left( \begin{matrix} x\_{1}^T & 1 \\\ x\_{2}^T & 1 \\\ \vdots & \vdots \\\ x\_{m}^T & 1 \\\ \end{matrix} \right)$$
+
+同时将标签也写成向量形式
+
+$$y = (y\_1;y\_2;...;y\_m)$$
+
+由均方误差最小化，可得
+
+$$\theta^* = arg\_{\theta}min(y-X\theta)^T(y-X\theta)$$
+
+其中，$\theta^*$表示 $\theta$ 的解。
+
+令
+
+$$E\_{\theta} = (y-X\theta)^T(y-X\theta)$$
+
+对 $\theta$ 求导得到
+
+$$
+\begin{equation}
+\begin{split}
+\frac{\partial E\_{\theta}}{\partial \theta}&=-X^T(y-X\theta) + (y^T - \theta^TX^T) \cdot (-X)\\\
+&=2X^T(X\theta - y)
+\end{split}
+\end{equation}
+$$
+
+令上式为 0，有
+
+$$2X^T(X\theta - y) = 0$$
+
+$$X^TX\theta = X^Ty$$
+
+最终得到
+
+$$\theta = (X^TX)^{-1}X^Ty$$
+
+当 $X^TX$ 不为满秩矩阵时，可解出多个 $\theta$ 使均方误差最小化。因此将由学习算法的归纳偏好来决定选择哪一个解作为输出，常见的做法就是引入正则化项。
 
 <script type="text/x-mathjax-config">
  MathJax.Hub.Config({

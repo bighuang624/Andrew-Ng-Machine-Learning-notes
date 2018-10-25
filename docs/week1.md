@@ -36,7 +36,7 @@
 
 $$J(\theta\_0, \theta\_1) = \frac{1}{2m}\sum^m\_{i=1}(\hat y\_i - y\_i)^2 = \frac{1}{2m}\sum^m\_{i=1}(h\_{\theta}(x\_i) - y\_i)^2$$
 
-这个函数也被称为“平方误差函数（Squared error function）”或者“平均平方误差（Mean squared error）”。在取平均时多了一个 $\frac{1}{2}$，这是为了方便计算梯度下降，求导时 $\frac{1}{2}$ 将被消掉。
+这个函数也被称为“平方误差函数（Squared error function）”或者“均方误差（Mean squared error）”。在取平均时多了一个 $\frac{1}{2}$，这是为了方便计算梯度下降，求导时 $\frac{1}{2}$ 将被消掉。
 
 ## 参数学习
 
